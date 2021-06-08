@@ -1,0 +1,17 @@
+class Solution:
+    def checkIfPangram(self, sentence: str) -> bool:
+        
+        alphabets = 'abcdefghijklmnopqrstuvwxyz'
+        counter = 0
+        output = True
+        
+        for i in alphabets:
+            if i in sentence:
+                counter += 1
+                
+                if counter == 26:
+                    output = True
+            else:
+                output = False
+        
+        return output
