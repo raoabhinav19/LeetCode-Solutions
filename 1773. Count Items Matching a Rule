@@ -1,0 +1,16 @@
+class Solution:
+    def countMatches(self, items: List[List[str]], ruleKey: str, ruleValue: str) -> int:
+        
+        rule_keys = ['type','color','name']
+        
+        # Finding the index of the ruleKey in rule_keys
+        
+        index_rk = rule_keys.index(ruleKey)
+        
+        output = 0
+        
+        for item in items:
+            if item[index_rk] == ruleValue:
+                output += 1
+        
+        return output
