@@ -1,0 +1,16 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        
+        index = None
+        
+        sorted_sentence = [0]*len(s.split())
+        
+        for word in s.split():
+            for char in word:
+                if char.isdigit():
+                    index = int(char)
+                    sorted_sentence[index-1] = word[:-1]
+                else:
+                    continue
+                          
+        return ' '.join(sorted_sentence)
