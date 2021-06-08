@@ -1,0 +1,14 @@
+/* Write your T-SQL query statement below */
+
+WITH joined_table AS
+(SELECT Prices.product_id, purchase_date, price, units
+ FROM UnitsSold
+ LEFT JOIN Prices ON
+ Prices.product_id = UnitsSold.product_id
+ WHERE purchase_date >= start_date AND purchase_date <= end_date
+)
+
+SELECT product_id,
+        ROUND((SUM(units*price*1.00))/(SUM(units)),2) AS average_price
+FROM joined_table
+GROUP BY product_id
