@@ -1,0 +1,21 @@
+class Solution:
+    def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
+        
+        output = 0
+        pointer = 0
+        
+        for word in words:
+            for char in word:
+                if char in allowed:
+                    pointer += 1
+                else:
+                    pointer = 0
+            
+            if pointer == len(word):
+                output += 1
+                pointer = 0
+            
+            else:
+                pointer = 0
+            
+        return output
