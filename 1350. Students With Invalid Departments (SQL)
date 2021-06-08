@@ -1,0 +1,6 @@
+/* Write your T-SQL query statement below */
+SELECT Students.id, Students.name
+FROM Students
+FULL OUTER JOIN Departments ON
+Departments.id = Students.department_id
+WHERE Departments.id IS NULL
