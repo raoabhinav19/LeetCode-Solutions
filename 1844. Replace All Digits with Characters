@@ -1,0 +1,19 @@
+class Solution:
+    def replaceDigits(self, s: str) -> str:
+        
+        alphabets = 'abcdefghijklmnopqrstuvwxyz'
+        split_s = [char for char in s]
+        output = [0]*len(split_s)
+        prev_char = None
+        index = None
+        
+        for i in range(len(split_s)):
+            if i % 2 == 0:
+                output[i] = split_s[i]
+            
+            elif i % 2 != 0:
+                prev_char = split_s[i-1]
+                index = alphabets.index(prev_char)
+                output[i] = alphabets[index + int(split_s[i])]
+            
+        return ''.join(output)
