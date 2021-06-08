@@ -1,0 +1,9 @@
+class Solution:
+    def calculateTime(self, keyboard: str, word: str) -> int:
+        
+        output = keyboard.index(word[0])
+        
+        for i in range(0,len(word)-1):
+            output += abs(keyboard.index(word[i]) - keyboard.index(word[i+1]))
+        
+        return output
