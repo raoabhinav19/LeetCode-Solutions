@@ -1,0 +1,15 @@
+class Solution:
+    def numberOfMatches(self, n: int) -> int:
+    
+        matches = 0
+        teams = n
+       
+        while teams != 1:
+            if teams % 2 != 0:
+                matches = int(matches + (teams-1)/2)
+                teams = int(((teams-1)/2) + 1)
+            else:
+                matches = int(matches + (teams/2))
+                teams = int(teams/2)
+        return matches
+            
