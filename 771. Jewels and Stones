@@ -1,0 +1,13 @@
+class Solution:
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        
+        split_jewels = list(jewels)
+        split_stones = list(stones)
+        
+        jewels_in_stone = 0
+        
+        for i in split_stones:
+            if i in split_jewels:
+                jewels_in_stone += 1
+        
+        return jewels_in_stone
