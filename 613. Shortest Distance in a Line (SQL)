@@ -1,0 +1,6 @@
+/* Write your T-SQL query statement below */
+
+select min(abs(a.x-b.x)) as shortest
+from point a
+cross join point b
+where a.x!=b.x
