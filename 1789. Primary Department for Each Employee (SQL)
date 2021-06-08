@@ -1,0 +1,7 @@
+SELECT employee_id, 
+CASE WHEN COUNT(employee_id) = 1 AND primary_flag = 'N' THEN department_id
+    WHEN COUNT(employee_id) = 1 AND primary_flag = 'Y' THEN department_id
+    WHEN COUNT(department_id) > 1 THEN MAX(IF(primary_flag = 'Y', department_id, NULL))
+END AS department_id
+FROM Employee
+GROUP BY employee_id
