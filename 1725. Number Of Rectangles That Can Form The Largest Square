@@ -1,0 +1,20 @@
+class Solution:
+    def countGoodRectangles(self, rectangles: List[List[int]]) -> int:
+        
+        maxLen = 0
+        maxLen_list = []
+        
+        for square in rectangles:
+                maxLen = min(square)
+                maxLen_list.append(maxLen)
+                maxLen = 0
+        
+        
+        max_elem = max(maxLen_list)
+        output = 0
+        
+        for i in maxLen_list:
+            if i == max_elem:
+                output += 1
+        
+        return output
